@@ -1,0 +1,44 @@
+#!/bin/sh -e
+#
+#    fact-add - facter plugin to insert custom facts
+#    Copyright (C) 2011 Canonical Ltd.
+#
+#    Authors: Juan L. Negron <juan@ubuntu.com>
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, version 3 of the License.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+# Global Variables
+FACTS_DIR=/etc/facts
+
+# Check for Fact Name
+if [ ! -n "$1" ]; then
+  echo "Fact name is needed"
+  exit 1
+else
+  FACT_NAME=$1
+fi
+
+# Check for Fact Value
+if [ ! -n "$2" ]; then
+  echo "Fact value is needed"
+  exit 1
+else
+  FACT_VALUE=$2
+fi
+
+if [ ! -d ${FACTS_DIR} ]; then
+  mkdir -p ${FACTS_DIR}
+fi
+
+echo "${FACT_VALUE}" > ${FACTS_DIR}/${FACT_NAME}
+exit 0

@@ -1,0 +1,32 @@
+.TH fact-add 1 "26 May 2011" fact-add "fact-add"
+.SH NAME
+fact-add \- wrapper script for adding custom facts to facter
+
+.SH SYNOPSIS
+\fBfact-add\fP FACT [VALUE]
+
+.SH DESCRIPTION
+\fBfact-add\fP is a script that adds new facts with an optional value into facter.
+
+Note that facts are stored in \fI/etc/facts\fP where the filename is the new fact and the contents of the file is the current value of the fact.
+
+Facts created by \fBfact-add\fP can be deleted with \fBfact-del\fP.
+
+The FACT parameters is the new fact to be created.  If a value is needed for the new fact the VALUE parameter is passed as well.
+
+.SH EXIT CODES
+\fBfact-add\fP returns 0 on success and 1 otherwise.
+
+
+.SH SEE ALSO
+.PD 0
+.TP
+\fBfacter\fP(1)
+.TP
+\fBfact-del\fP(1)
+.PD
+
+.SH AUTHOR
+This manpage and the utility were written by Juan L. Negron <juan@ubuntu.com> for Ubuntu systems (but may be used by others).  Permission is granted to copy, distribute and/or modify this document and the utility under the terms of the GNU General Public License, Version 3 published by the Free Software Foundation.
+
+The complete text of the GNU General Public License can be found in \fI/usr/share/common-licenses/GPL\fP on Debian/Ubuntu systems, or in \fI/usr/share/doc/fedora-release-*/GPL\fP on Fedora systems, or on the web at \fIhttp://www.gnu.org/licenses/gpl.txt\fP.

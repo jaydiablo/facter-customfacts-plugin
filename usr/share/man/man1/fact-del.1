@@ -1,0 +1,28 @@
+.TH fact-del 1 "26 May 2011" fact-add "fact-add"
+.SH NAME
+fact-del \- wrapper script for deleting custom facts to facter
+
+.SH SYNOPSIS
+\fBfact-add\fP FACT
+
+.SH DESCRIPTION
+\fBfact-del\fP is a script that removes facts created with \fBfact-add\fP from facter.
+
+Note that facts are stored in \fI/etc/facts\fP where the filename is the new fact and the contents of the file is the current value of the fact.
+
+.SH EXIT CODES
+\fBfact-del\fP returns 0 on success and 1 otherwise.
+
+
+.SH SEE ALSO
+.PD 0
+.TP
+\fBfacter\fP(1)
+.TP
+\fBfact-add\fP(1)
+.PD
+
+.SH AUTHOR
+This manpage and the utility were written by Juan L. Negron <juan@ubuntu.com> for Ubuntu systems (but may be used by others).  Permission is granted to copy, distribute and/or modify this document and the utility under the terms of the GNU General Public License, Version 3 published by the Free Software Foundation.
+
+The complete text of the GNU General Public License can be found in \fI/usr/share/common-licenses/GPL\fP on Debian/Ubuntu systems, or in \fI/usr/share/doc/fedora-release-*/GPL\fP on Fedora systems, or on the web at \fIhttp://www.gnu.org/licenses/gpl.txt\fP.
